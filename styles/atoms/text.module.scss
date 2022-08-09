@@ -3,4 +3,11 @@
   font-size: var(--sm-size);
   line-height: 25px;
   color: $gray-color;
+
+  &_card {
+    width: 100%;
+    max-width: 430px;
+    line-height: 30px;
+    margin: 25px 0;
+  }
 }

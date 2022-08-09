@@ -1,0 +1,49 @@
+.cards {
+  width: 100%;
+  max-width: 1793px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  list-style: none;
+  position: relative;
+  margin-right: 71px;
+
+  &.one {
+    margin-top: 0;
+    .img {
+      width: 433px;
+      object-fit: cover;
+      height: 390px;
+    }
+
+    .pay_image_box {
+      position: absolute;
+      left: -165px;
+      top: 40px;
+    }
+  }
+
+  &.two  {
+    margin-top: 47px;
+    .img {
+      width: 402px;
+      object-fit: cover;
+      height: 430px;
+    }
+  }
+
+  &.three {
+    margin-top: 52px;
+    margin-right: 0;
+    .img {
+      width: 433px;
+      object-fit: cover;
+      height: 460px;
+    }
+  }
+}

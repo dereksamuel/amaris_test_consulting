@@ -1,0 +1,129 @@
+.purple_background {
+  width: 100%;
+  position: relative;
+  // overflow: hidden;
+  max-width: 1920px;
+  margin: auto;
+  margin-top: 165px;
+  min-height: 1110px;
+  background: url('/images/purple_background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background_woom {
+  position: absolute;
+  right: 0;
+  min-height: 329.27px;
+  max-width: 606px;
+  width: 100%;
+  background: url('/images/Woom.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dots1 {
+  position: absolute;
+  top: 376px;
+  left: 250px;
+  min-height: 472.16px;
+  max-width: 213.76px;
+  width: 100%;
+  background: url('/images/dots1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dots2 {
+  position: absolute;
+  top: 752px;
+  right: 162.84px;
+  min-height: 213.76px;
+  max-width: 472.16px;
+  width: 100%;
+  background: url('/images/dots2.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-development {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 257px;
+
+  .image-container {
+    margin-top: -60px;
+
+    img {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    margin-right: 334px;
+
+    .image-container {
+      margin-bottom: -55px;
+    }
+  }
+}
+
+.text-container {
+  margin-left: 70px;
+
+  .subtitle {
+    width: 100%;
+    max-width: 275px;
+  }
+
+  .second-subtitle {
+    max-width: 100%;
+  }
+
+  .text {
+    margin-top: 13px;
+    margin-bottom: 39px;
+    width: 100%;
+    max-width: 480px;
+    color: white;
+  }
+}
+
+.circle {
+  border: 5px solid #FFBA49;
+  position: absolute;
+  background: none;
+  border-radius: 50%;
+  z-index: 0;
+
+  &.lg {
+    width: 401px;
+    height: 401px;
+    left: -20px;
+    top: 160px;
+  }
+
+  &.md {
+    width: 262px;
+    height: 262px;
+    right: -120px;
+    top: -50px;
+  }
+
+  &.sm {
+    left: -63px;
+    top: 135px;
+    width: 65px;
+    height: 65px;
+    &.right {
+      z-index: 3;
+      left: initial;
+      right: 273px;
+      top: initial;
+    }
+  }
+}

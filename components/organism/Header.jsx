@@ -3,36 +3,36 @@ import Image from 'next/image'
 // components
 import Button from '../atoms/Button'
 import Link from '../atoms/Link'
-import SearchIcon from '../icons/SearchIcon';
+import SearchIcon from '../icons/SearchIcon'
 
 export default function Header() {
   const links = [
     {
-      id: "12345465",
-      name: "Sell",
-      to: "/sell-component"
+      id: '12345465',
+      name: 'Sell',
+      to: '/sell-component'
     },
     {
-      id: "123454675",
-      name: "Marketplace",
-      to: "/market-place"
+      id: '123454675',
+      name: 'Marketplace',
+      to: '/market-place'
     },
     {
-      id: "123845465",
-      name: "Community",
-      to: "/community"
+      id: '123845465',
+      name: 'Community',
+      to: '/community'
     },
     {
-      id: "123459465",
-      name: "Analyze",
-      to: "/analyze"
+      id: '123459465',
+      name: 'Analyze',
+      to: '/analyze'
     },
     {
-      id: "1234545465",
-      name: "Downloads",
-      to: "/downloads"
+      id: '1234545465',
+      name: 'Downloads',
+      to: '/downloads'
     }
-  ];
+  ]
 
   return (
     <header className='menu'>

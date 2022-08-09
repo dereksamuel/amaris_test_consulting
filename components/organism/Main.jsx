@@ -1,6 +1,6 @@
-import Button from '../atoms/Button';
-import Link from '../atoms/Link';
-import Text from '../atoms/Text';
+import Button from '../atoms/Button'
+import Link from '../atoms/Link'
+import Text from '../atoms/Text'
 
 export default function Main() {
   return <main className='main'>

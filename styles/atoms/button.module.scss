@@ -16,6 +16,11 @@
     color: white;
   }
 
+  &.secondary {
+    background-color: $bg-primary-color;
+    color: white;
+  }
+
   &.ovalo {
     border-radius: 60px;
   }
@@ -27,5 +32,9 @@
 
   &.lg {
     padding: 25px 63px;
+  }
+
+  &.md {
+    padding: 21px 26px;
   }
 }

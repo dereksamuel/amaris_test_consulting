@@ -5,10 +5,13 @@
 @import './atoms/text.module.scss';
 @import './atoms/button.module.scss';
 @import './atoms/link.module.scss';
+@import './atoms/subtitle.module.scss';
 
 // organism
 @import './organism/header.module.scss';
 @import './organism/main.module.scss';
+@import './organism/skills.module.scss';
+@import './organism/aboutus.module.scss';
 
 // media-queries
 @import './media-queries.scss';
