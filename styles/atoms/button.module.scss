@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  outline: none;
+  font-family: $primary-font;
+  cursor: auto;
+  font-weight: 500;
+  font-size: var(--sm-size);
+  transition: 0.2s all;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &.ovalo {
+    border-radius: 60px;
+  }
+
+  &.square {
+    border-radius: 5px;
+    padding: 13px 14px;
+  }
+
+  &.lg {
+    padding: 25px 63px;
+  }
+}

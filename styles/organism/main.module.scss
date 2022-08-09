@@ -1,0 +1,48 @@
+.main {
+  position: relative;
+  min-height: 1188px;
+  background: linear-gradient(180deg, #E5EFFF 0%, rgba(229, 239, 255, 0.262661) 83.7%, rgba(229, 239, 255, 0) 100%);
+}
+
+.w_background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 963px;
+  min-height: 1087px;
+  background-repeat: no-repeat;
+  background: url('/images/WBackground.png');
+}
+
+.hero_image {
+  position: absolute;
+  right: 0;
+  top: 179px;
+}
+
+.hero-message {
+  position: relative;
+  padding-top: 270px;
+  padding-left: 220px;
+
+  .title {
+    width: 100%;
+    max-width: 818px;
+    font-size: var(--lg-size);
+    margin-bottom: 29px;
+    font-family: $secondary-font;
+    color: $secondary-color;
+  }
+}
+
+.button-order {
+  margin-top: 31px;
+  display: flex;
+  align-items: center;
+
+  .button {
+    margin-right: 12px;
+  }
+}

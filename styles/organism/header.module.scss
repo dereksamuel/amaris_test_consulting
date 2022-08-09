@@ -1,0 +1,22 @@
+.menu {
+  z-index: 1;
+  position: relative;
+  padding: 37px 55px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.links_middle {
+  flex: 1;
+  padding: 0 38px;
+  margin-left: 106px;
+}
+
+.latest_links {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// Variables
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'CircularStd-Black', sans-serif;
+$tertiary-font: 'CircularStd-Medium', sans-serif;
+
+$primary-color: #7854F7;
+$secondary-color: #272D4E;
+$gray-color: #94A2B3;
+$radioactive-color: #299EF3;
+$transparent-color: #00000033;
+
+:root {
+  --sm-size: 18px;
+  --md-size: 55px;
+  --lg-size: 85px;
+}
+
+// Initializations
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+}
