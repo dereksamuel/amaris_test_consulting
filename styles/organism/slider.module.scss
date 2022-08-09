@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+  min-height: 1209px;
+  background: linear-gradient(180deg, rgba(236, 240, 253, 0) 0%, rgba(236, 240, 253, 0.53) 14.32%, #ECF0FD 45.83%, rgba(236, 240, 253, 0.43) 84.33%, rgba(236, 240, 253, 0) 100%);
+}
+
+.people_images {
+  max-width: 1920px;
+
+  .right {
+    position: absolute;
+    right: 203px;
+    top: 45px;
+  }
+
+  .left {
+    position: absolute;
+    left: 102px;
+    top: 55px;
+  }
+}
+
+.dots1Slider {
+  position: absolute;
+  left: 38%;
+  top: 535.2px;
+  transform: translateX(-50%);
+  height: 213.76px;
+  width: 472.16px;
+  background: url('/images/dots1Slider.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dots2Slider {
+  position: absolute;
+  right: 12.5%;
+  top: 273px;
+  transform: translateX(-50%);
+  height: 213.76px;
+  width: 472.16px;
+  background: url('/images/dots2Slider.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

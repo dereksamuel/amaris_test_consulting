@@ -1,9 +1,72 @@
 @font-face {
-  font-family: 'CircularStd-Black';
-  src: url('/fonts/CircularStd-Black.ttf');
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Black.woff2') format('woff2'),
+      url('/fonts/CircularStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'CircularStd-Medium';
-  src: url('/fonts/CircularStd-Medium.ttf');
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Black.woff2') format('woff2'),
+      url('/fonts/CircularStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-BlackItalic.woff2') format('woff2'),
+      url('/fonts/CircularStd-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Medium.woff2') format('woff2'),
+      url('/fonts/CircularStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Medium.woff2') format('woff2'),
+      url('/fonts/CircularStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-MediumItalic.woff2') format('woff2'),
+      url('/fonts/CircularStd-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-BlackItalic.woff2') format('woff2'),
+      url('/fonts/CircularStd-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-MediumItalic.woff2') format('woff2'),
+      url('/fonts/CircularStd-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+

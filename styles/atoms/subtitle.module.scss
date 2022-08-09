@@ -23,6 +23,11 @@
     position: relative;
   }
 
+  &.trusted {
+    margin-top: 237px;
+    max-width: 546px;
+  }
+
   &.section {
     color: white;
     font-size: var(--sm-md-size);

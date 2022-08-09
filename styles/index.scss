@@ -12,6 +12,11 @@
 @import './organism/main.module.scss';
 @import './organism/skills.module.scss';
 @import './organism/aboutus.module.scss';
+@import './organism/slider.module.scss';
+@import './organism/carrousel.module.scss';
 
 // media-queries
 @import './media-queries.scss';
+
+//
+@import 'https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css';
