@@ -1,23 +1,53 @@
-// @media screen and (max-width: '1840px') {
-//   :root {
-//     --sm-size: 15px;
-//     --md-size: 35px;
-//     --lg-size: 50px;
-//   }
+$medium-pc-size: 1840px;
+$medium-tablet-size: 1724px;
+$sm-tablet-size: 1350px;
+$large-phone-size: 1138px;
+$phone-size: 848px;
 
-//   .hero-message {
-//     padding-left: 5vw;
-//   }
+@media screen and (max-width: $medium-pc-size) {
+  :root {
+    --sm-size: 15px;
+    --sm-md-size: 25px;
+    --md-size: 35px;
+    --lg-size: 60px;
+  }
+}
 
-//   .hero-message .title {
-//     max-width: 40vw;
-//   }
+@media screen and (max-width: $large-phone-size) {
+  :root {
+    --sm-size: 15px;
+    --sm-md-size: 20px;
+    --md-size: 25px;
+    --lg-size: 45px;
+  }
 
-//   .button.primary.lg {
-//     padding: 15px 30px;
-//   }
+  .support .alert {
+    justify-content: start;
+  }
 
-//   .link.primary {
-//     font-size: 17px;
-//   }
-// }
+  .menu {
+    display: none;
+  }
+
+  .m-hamburger {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hamburgerMenu {
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: $medium-tablet-size) {
+  .support .people_container img {
+    width: 1005px;
+    margin-bottom: 42px;
+  }
+}
+
+@import './medias/header.module.scss';
+@import './medias/main.module.scss';
+@import './medias/skills.module.scss';
+@import './medias/slider.module.scss';
+@import './medias/aboutus.module.scss';

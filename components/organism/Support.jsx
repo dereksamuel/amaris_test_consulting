@@ -10,7 +10,7 @@ export default function Support() {
       <Text>Our team of Happiness Engineers works remotely from 68 countries providing customers support across multiple time zones.</Text>
       <div className="alert_container">
         <picture className="people_container">
-          <People />
+          <img src="/images/people.png" alt="people" />
         </picture>
         <div className="alert">
           <h4 className='message'>

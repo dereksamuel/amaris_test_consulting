@@ -1,0 +1,169 @@
+@media screen and (max-width: $medium-pc-size) {
+  .section-development {
+    margin-bottom: 36px;
+
+    .text-container {
+      margin-left: 45px;
+      .text {
+        max-width: 420px;
+      }
+    }
+
+    .image-container img {
+      max-width: 364px;
+    }
+
+    .image-container {
+      margin-top: -35px;
+    }
+  }
+
+  .dots1 {
+    // top: 557px;
+    top: 263px;
+    left: 229px;
+    min-height: 396.16px;
+    max-width: 178.76px;
+  }
+
+  .dots2 {
+    top: 557px;
+    min-height: 178.76px;
+    max-width: 396.16px;
+  }
+
+  .circle {
+    &.sm {
+      width: 50px;
+      height: 50px;
+      left: -55px;
+      top: 66px;
+      &.right {
+        right: 203px;
+      }
+    }
+
+    &.md {
+      width: 200px;
+      height: 200px;
+      right: -95px;
+    }
+
+    &.lg {
+      width: 322px;
+      height: 322px;
+      left: -40px;
+      top: 100px;
+    }
+  }
+
+  .purple_background {
+    min-height: 809px;
+  }
+
+  .background_woom {
+    position: absolute;
+    right: 0;
+    min-height: 176.27px;
+    max-width: 321px;
+  }
+}
+
+@media screen and (max-width: $medium-tablet-size) {
+  .dots1 {
+    display: none;
+  }
+
+  .dots2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $sm-tablet-size) {
+  .section-development {
+    margin-left: 114px;
+  }
+
+  .section-development.reverse {
+    margin-right: 200px;
+  }
+}
+
+@media screen and (max-width: $phone-size) {
+  .circle {
+    display: none;
+  }
+
+  .section-development {
+    margin-left: 0;
+  }
+
+  .section-development.reverse {
+    margin-right: 0;
+  }
+
+  .purple_background {
+    min-height: 970px;
+  }
+}
+
+@media screen and (max-width: 642px) {
+  .section-development .image-container img {
+    display: none;
+  }
+
+  .purple_background {
+    min-height: 670px;
+  }
+
+  .section-development .text-container {
+    margin-top: 35px;
+  }
+
+  .support .alert {
+    min-height: 207px;
+  }
+
+  .slider {
+    min-height: 665px;
+  }
+
+  .card.one .img {
+    width: 302px;
+    height: 245px;
+  }
+
+  .card.two .img {
+    width: 299px;
+    height: 288px;
+  }
+
+  .card.three .img {
+    width: 299px;
+    height: 288px;
+  }
+
+  .support .alert .message {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .link_container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding-bottom: 25px;
+  }
+
+  .footer_white .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .subtitle.ecomerce {
+    margin-top: -80px;
+    position: relative;
+  }
+}
+

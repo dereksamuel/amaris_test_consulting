@@ -1,0 +1,146 @@
+@media screen and (max-width: $medium-pc-size) {
+  .subtitle {
+    &.trusted {
+      margin-top: 165px;
+    }
+  }
+
+  .people_images {
+    .left {
+      left: 204px;
+      top: 55px;
+      max-width: 300px;
+    }
+
+    .right {
+      right: 263px;
+      top: 45px;
+      max-width: 270px;
+    }
+  }
+
+  .slider {
+    min-height: 830px;
+  }
+
+  .support {
+    .alert {
+      min-height: 207px;
+      .circle.middle {
+        width: 69px;
+        height: 68px;
+        top: 100px;
+        right: 144px;
+      }
+      .message {
+        font-size: 25px;
+        line-height: 39px;
+      }
+    }
+  }
+
+
+  .carrousel {
+    width: 707px;
+    height: 335px;
+    .description {
+      font-size: 20px;
+    }
+  }
+
+  .controler .prev {
+    transform: scale(1.2);
+    margin-right: 11.27px;
+  }
+
+  .controler .next {
+    transform: scale(0.8);
+  }
+
+  .carrouselConsecutive {
+    top: -35px;
+  }
+
+  .carrousel_container {
+    width: 750px;
+    height: 330px;
+    top: 79px;
+  }
+
+  .dots2Slider {
+    right: 14.5%;
+    top: 186px;
+    height: 164.76px;
+    width: 364.16px;
+  }
+
+  .dots1Slider {
+    height: 164.76px;
+    width: 364.16px;
+    left: 35%;
+    top: 441.2px;
+  }
+}
+
+@media screen and (max-width: $medium-tablet-size) {
+  .people_images {
+    .left, .right {
+      display: none;
+    }
+  }
+
+  .dots2Slider {
+    right: 8.5%;
+  }
+
+  .support .alert .circle.middle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $sm-tablet-size) {
+  .footer_white {
+    height: 68px;
+    padding: 0 45px;
+  }
+}
+
+@media screen and (max-width: $large-phone-size) {
+  .footer_white img, .footer_white svg {
+    display: none;
+  }
+
+  .footer .improvements .item {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: $phone-size) {
+  .dots1Slider, .dots2Slider {
+    display: none;
+  }
+
+  .carrouselConsecutive {
+    display: none;
+  }
+
+  .carrousel_container {
+    width: 100%;
+    height: 280px;
+    top: 79px;
+  }
+
+  .carrousel {
+    width: 320px;
+    height: 330px;
+
+    .item {
+      width: 320px;
+      .description {
+        font-size: 15px;
+        line-height: 30px;
+        padding: 0 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@media screen and (max-width: $medium-pc-size) {
+  .cards {
+    margin-top: 20px;
+  }
+
+  .card.one .img {
+    width: 388px;
+    height: 319px;
+    object-position: right;
+  }
+
+  .card.one .pay_image_box {
+    position: absolute;
+    left: -133px;
+    top: 34px;
+    width: 260px;
+  }
+
+  .card.two .img {
+    width: 388px;
+    height: 374px;
+    object-position: right;
+  }
+
+  .card.two {
+    margin-top: 27px;
+  }
+
+  .card.three .img {
+    width: 388px;
+    height: 374px;
+    object-position: right;
+  }
+
+  .card.three {
+    margin-top: 42px;
+  }
+
+  .text_card {
+    max-width: 300px;
+    margin: 15px 0;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: $medium-tablet-size) {
+  .card.one .pay_image_box {
+    display: none;
+  }
+
+  .cards {
+    max-width: 1316px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: $sm-tablet-size) {
+  .cards {
+    margin-top: 15px;
+  }
+
+  .card.one, .card.two, .card.three {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: $large-phone-size) {
+  .link_container {
+    padding: 0 10px;
+  }
+  .support .people_container img {
+    display: none;
+  }
+
+  .support .alert {
+    padding: 0 34px;
+  }
+
+  .support .people_container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .footer .improvements {
+    padding-bottom: 80px;
+  }
+}

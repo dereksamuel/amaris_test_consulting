@@ -1,0 +1,94 @@
+@media screen and (max-width: $medium-pc-size) {
+  .main {
+    // min-height: 1188px;
+    min-height: 970px;
+  }
+
+  .w_background {
+    max-width: 787px;
+  }
+
+  .hero_image {
+    position: absolute;
+    right: 0;
+    object-fit: contain;
+    top: 68px;
+    /* height: 689px; */
+    width: 678px;
+    object-position: right;
+  }
+
+  .hero-message {
+    padding-left: 12vw;
+    padding-top: 230px;
+  }
+
+  .hero-message .title {
+    max-width: 39vw;
+  }
+
+  .button.primary.lg {
+    padding: 18px 40px;
+  }
+
+  .link.primary {
+    font-size: 17px;
+  }
+
+  .subtitle.large {
+    max-width: 368px;
+  }
+}
+
+@media screen and (max-width: $medium-tablet-size) {
+  .hero-message {
+    padding-left: 5vw;
+    padding-top: 230px;
+  }
+}
+
+@media screen and (max-width: $sm-tablet-size) {
+  .w_background {
+    max-width: 654px;
+  }
+
+  .hero_image {
+    top: 5px;
+    width: 529px;
+  }
+}
+
+@media screen and (max-width: $large-phone-size) {
+  .hero-message {
+    padding-left: 5vw;
+    padding-top: 230px;
+
+    .text {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-size) {
+  .hero_image {
+    display: none;
+  }
+
+  .hero-message .title, .hero-message .text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-message {
+    padding: 0 10px;
+    padding-top: 170px;
+  }
+
+  .button-order {
+    justify-content: center;
+  }
+
+  .main {
+    min-height: 815px;
+  }
+}
