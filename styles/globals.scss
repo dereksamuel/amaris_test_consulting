@@ -33,3 +33,17 @@ body {
 .glider-track {
   scroll-snap-type: x mandatory;
 }
+
+.swal-text {
+  font-family: $primary-font;
+}
+
+.swal-button {
+  background-color: $primary-color;
+  border-radius: 60px;
+  padding: 12px;
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: $primary-color;
+}

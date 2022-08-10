@@ -37,4 +37,9 @@
     font-size: var(--sm-md-size);
     font-family: $tertiary-font;
   }
+
+  &.modalsubtitle {
+    text-align: center;
+    padding-bottom: 5px;
+  }
 }

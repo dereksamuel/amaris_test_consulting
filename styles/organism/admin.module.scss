@@ -1,0 +1,43 @@
+.menu {
+  &.admin {
+    // :root {
+    //   --sm-size: 15px;
+    //   --sm-md-size: 25px;
+    //   --md-size: 35px;
+    //   --lg-size: 60px;
+    // }
+
+    display: flex;
+    align-items: center;
+    padding: 18px;
+
+    .subtitle {
+      margin: 0;
+      max-width: fit-content;
+      margin-left: 30px;
+    }
+  }
+}
+
+.paneltitle {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: $secondary-color;
+
+  .subtitle {
+    color: white;
+  }
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  margin: auto;
+  margin-top: 100px;
+  max-width: 685px;
+  border: 2px solid;
+  border-radius: 5px;
+  overflow-x: auto;
+  // background-color: $secondary-color;
+}

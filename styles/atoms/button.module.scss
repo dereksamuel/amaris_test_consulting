@@ -38,8 +38,25 @@
     padding: 21px 26px;
   }
 
+  &.sm {
+    padding: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+  }
+
   &.outline {
     background: none;
     border: 2px solid white;
+  }
+
+  &.cancel {
+    background-color: $gray-color;
+    padding: 18px 40px;
+    color: white;
+    margin-right: 15px;
   }
 }

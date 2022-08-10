@@ -1,0 +1,36 @@
+$grid-space: 25px;
+$max-width: 100%;
+
+.carrouselData {
+  max-width: $max-width;
+  background-color: white;
+}
+
+.read {
+  padding-left: 20px;
+}
+
+.header_grid, .body_grid {
+  display: grid;
+  grid-template-columns: 45px repeat(2, minmax(150px, 1fr)) 100px;
+  gap: $grid-space;
+  max-width: 100%;
+  margin-bottom: $grid-space;
+  align-items: center;
+
+  p {
+    padding: 15px;
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.body_grid {
+  .button {
+    margin: 0;
+  }
+}
+
+.create {
+  display: none;
+}

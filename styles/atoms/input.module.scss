@@ -1,0 +1,13 @@
+.input {
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.input:focus {
+  outline: 0.5px solid #5F37EF;
+}
+
+.input[type="checkbox"]:focus {
+  outline: none;
+}

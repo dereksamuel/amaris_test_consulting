@@ -6,6 +6,7 @@
 @import './atoms/button.module.scss';
 @import './atoms/link.module.scss';
 @import './atoms/subtitle.module.scss';
+@import './atoms/input.module.scss';
 
 // organism
 @import './organism/header.module.scss';
@@ -16,6 +17,9 @@
 @import './organism/carrousel.module.scss';
 @import './organism/support.module.scss';
 @import './organism/footer.module.scss';
+@import './organism/admin.module.scss';
+@import './organism/carrouselData.module.scss';
+@import './organism/modal.module.scss';
 
 // media-queries
 @import './media-queries.scss';

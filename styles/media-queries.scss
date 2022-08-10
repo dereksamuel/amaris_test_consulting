@@ -27,6 +27,10 @@ $phone-size: 848px;
 
   .menu {
     display: none;
+
+    &.admin {
+      display: flex;
+    }
   }
 
   .m-hamburger {

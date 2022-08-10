@@ -13,7 +13,8 @@
     "glider-js": "^1.7.7",
     "next": "12.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "eslint": "8.21.0",

@@ -7,6 +7,7 @@ import Main from '../components/organism/Main'
 import Skills from '../components/organism/Skills'
 import Slider from '../components/organism/Slider'
 import Support from '../components/organism/Support'
+import getCarrousel from '../utils/getCarrousel'
 
 const prisma = new PrismaClient()
 
@@ -25,30 +26,7 @@ export default function LandPage({ carrousel }) {
 }
 
 export async function getStaticProps() {
-  let error = null
+  const props = await getCarrousel(prisma)
 
-  try {
-    const carrouselData = await prisma.carrousel.findMany()
-
-    return {
-      props: {
-        carrousel: {
-          data: carrouselData,
-          error
-        }
-      }
-    }
-  } catch (err) {
-    console.error(err)
-    error = err
-
-    return {
-      props: {
-        carrousel: {
-          data: null,
-          error
-        }
-      }
-    }
-  }
+  return { props }
 }
