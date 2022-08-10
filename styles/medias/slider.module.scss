@@ -131,16 +131,20 @@
   }
 
   .carrousel {
-    width: 320px;
     height: 330px;
+    width: 90%;
 
     .item {
-      width: 320px;
+      width: 90%;
       .description {
         font-size: 15px;
         line-height: 30px;
         padding: 0 25px;
       }
     }
+  }
+
+  .support .alert {
+    padding: 20px;
   }
 }

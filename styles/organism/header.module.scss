@@ -31,7 +31,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #272d4ee5;
+  background-color: #5F37EF;
+  box-shadow: 0 0 20px black;
   z-index: 100;
   opacity: 0;
   transition: 0.25s all;
@@ -80,7 +81,7 @@
 
 @keyframes showable {
   0% {
-    opacity: 0;
+    opacity: 0.2;
     transform: translateX(580px);
   }
   100% {

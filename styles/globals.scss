@@ -29,3 +29,7 @@ $transparent-color: #00000033;
 body {
   font-family: $primary-font;
 }
+
+.glider-track {
+  scroll-snap-type: x mandatory;
+}
