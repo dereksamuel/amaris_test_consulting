@@ -23,6 +23,10 @@
     position: relative;
   }
 
+  &.supported {
+    max-width: 668px;
+  }
+
   &.trusted {
     margin-top: 237px;
     max-width: 546px;

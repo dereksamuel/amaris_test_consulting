@@ -1,0 +1,44 @@
+.support {
+  .text {
+    max-width: 660px;
+    margin: auto;
+    margin-top: 31px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .people_container {
+    margin: auto;
+    margin-top: -11px;
+    margin-bottom: -184px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .alert {
+    background-color: #5F37EF;
+    min-height: 261px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .message {
+      max-width: 855px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 52px;
+      color: white;
+      margin-right: 67px;
+    }
+
+    .circle.middle {
+      width: 89px;
+      height: 88px;
+      top: 194px;
+      right: 144px;
+    }
+  }
+}

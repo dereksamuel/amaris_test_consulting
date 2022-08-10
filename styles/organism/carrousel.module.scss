@@ -5,6 +5,7 @@
   top: 135px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 5;
 }
 
 .carrousel {
@@ -16,6 +17,8 @@
   height: 391px;
   border-radius: 20px;
   background: white;
+  box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+  z-index: 5;
 
   .item {
     padding: 87px 0;
@@ -51,7 +54,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: -90px;
+  bottom: -120px;
   right: 100px;
 
   .prev {
@@ -78,4 +81,11 @@
   .disabled path {
     opacity: 0.3;
   }
+}
+
+.carrouselConsecutive {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 18px;
 }

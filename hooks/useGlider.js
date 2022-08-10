@@ -12,7 +12,9 @@ export default function useGlider(gliderElement) {
         // may also pass element directly
         next: '.next'
       },
+      'glider-loaded': console.log
     })
+
+    document.addEventListener('glider-loaded', console.log)
   }, [gliderElement])
 }
-
