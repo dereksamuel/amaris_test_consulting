@@ -1,5 +1,5 @@
 .menu {
-  z-index: 1;
+  z-index: 100;
   position: relative;
   padding: 37px 55px;
   display: flex;
@@ -23,4 +23,68 @@
 
 .m-hamburger {
   display: none;
+}
+
+.showableLinks {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #272d4ee5;
+  z-index: 100;
+  opacity: 0;
+  transition: 0.25s all;
+  animation: 0.5s alternate forwards showable;
+
+  .links_middle {
+    margin-top: 80px;
+    display: block;
+    margin-left: 0;
+    a {
+      display: block;
+      color: white;
+      margin-bottom: 10px;
+    }
+  }
+
+  .latest_links {
+    margin-top: 80px;
+    justify-content: center;
+    align-items: start;
+    padding: 0 38px;
+    flex-direction: column;
+
+    .link-reverse {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+
+      p {
+        margin-right: 12px;
+      }
+    }
+
+    a, .button {
+      display: block;
+      color: white;
+      margin-bottom: 10px;
+      margin-left: 0;
+    }
+
+    svg path {
+      fill: white;
+    }
+  }
+}
+
+@keyframes showable {
+  0% {
+    opacity: 0;
+    transform: translateX(580px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

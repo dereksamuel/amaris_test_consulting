@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 
 // components
@@ -6,6 +7,7 @@ import Link from '../atoms/Link'
 import SearchIcon from '../icons/SearchIcon'
 
 export default function Header() {
+  const [state, setState] = useState({ showMenuHamburger: false })
   const links = [
     {
       id: '12345465',
@@ -34,6 +36,13 @@ export default function Header() {
     }
   ]
 
+  const onTogleMenu = () => {
+    setState({
+      ...state,
+      showMenuHamburger: !state.showMenuHamburger
+    })
+  }
+
   return (
     <>
       <header className='menu'>
@@ -55,6 +64,22 @@ export default function Header() {
         </div>
       </header>
       <header className='menu m-hamburger'>
+        {
+          state.showMenuHamburger && (
+            <div className="showableLinks">
+              <div className="links_middle">
+                {links?.map(link => (
+                  <Link onClick={console.log} key={link.id} className='link'>{link.name}</Link>
+                ))}
+              </div>
+              <div className="latest_links">
+                <Link className="link">Log In</Link>
+                <Link className="link-reverse"><p>Buscar</p><SearchIcon /></Link>
+                <Button className='square primary'>Get Started</Button>
+              </div>
+            </div>
+          )
+        }
         <Image
           src='/images/Logo.png'
           alt='Logo'
@@ -65,14 +90,23 @@ export default function Header() {
           {/* <Link className="link">Log In</Link>
           <Button className='square primary'>Get Started</Button>
           <Link className="link-reverse"><SearchIcon /></Link> */}
-          <div className="hamburgerMenu">
-            <Image
-              src='/images/hamburger.png'
-              alt='Logo'
-              width='30px'
-              height='30px'
-            ></Image>
-          </div>
+          <button className={`${state.showMenuHamburger && 'whiteHm'} hamburgerMenu`} onClick={onTogleMenu}>
+            {state.showMenuHamburger ? (
+              <Image
+                src='/images/cerrar.png'
+                alt='Logo'
+                width='15px'
+                height='15px'
+              ></Image>
+            ) : (
+              <Image
+                src='/images/hamburger.png'
+                alt='Logo'
+                width='30px'
+                height='30px'
+              ></Image>
+            ) }
+          </button>
         </div>
       </header>
     </>

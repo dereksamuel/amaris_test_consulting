@@ -36,6 +36,23 @@ $phone-size: 848px;
 
   .hamburgerMenu {
     margin-left: 25px;
+    border: none;
+    outline: none;
+    background: none;
+    z-index: 101;
+  }
+
+  .whiteHm {
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
