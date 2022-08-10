@@ -134,7 +134,16 @@
     height: 330px;
     width: 90%;
 
+    .semicolons {
+      &.none {
+        display: block;
+      }
+    }
+
     .item {
+      .marco {
+        display: none;
+      }
       width: 90%;
       .description {
         font-size: 15px;

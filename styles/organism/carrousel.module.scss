@@ -28,6 +28,31 @@
     justify-content: center;
     scroll-snap-align: center;
     // box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+
+    .marco {
+      box-shadow: 0 0 20px 12px rgb(215 228 249 / 50%);
+      border-radius: 5px;
+      max-width: 200px;
+      min-height: 150px;
+      min-width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 46px;
+      height: 150px;
+      background-color: $secondary-color;
+
+      &.none {
+        display: none;
+      }
+
+      .image {
+        border-radius: 5px;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 
   .semicolons {
@@ -36,9 +61,14 @@
     left: 50%;
     transform: translateX(-50%);
     margin-top: 28px;
+
+    &.none {
+      display: none;
+    }
   }
 
   .description {
+    margin: 0 46px;
     text-align: center;
     width: 100%;
     max-width: 566.17px;
@@ -47,6 +77,12 @@
     font-size: 26.7px;
     font-family: $tertiary-font;
     position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-break: none;
+    overflow: hidden;
+    hyphens: auto;
   }
 
 }

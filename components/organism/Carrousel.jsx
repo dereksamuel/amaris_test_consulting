@@ -4,7 +4,7 @@ import Arrow from '../icons/Arrow'
 import ArrowLeft from '../icons/ArrowLeft'
 import Semicolons from '../icons/Semicolons'
 
-export default function Carrousel() {
+export default function Carrousel({ carrousel }) {
   useGlider('.carrousel')
 
   return (
@@ -13,14 +13,15 @@ export default function Carrousel() {
         <img className='carrouselConsecutive' src='/images/carrouselConsecutive.svg' alt='carrouselConsecutive' />
       </picture>
       <ul className='carrousel'>
-        <li className='item'>
-          <Semicolons className='semicolons'></Semicolons>
-          <h4 className='description'>No other eCommerce platform allows people to start for free and grow their store as their business grows. More importantly, WooCommerce doesn't charge you a portion of your profits as your business grows!</h4>
-        </li>
-        <li className='item'>
-          <Semicolons className='semicolons'></Semicolons>
-          <h4 className='description'>Garra, Garra, Garra and Garra</h4>
-        </li>
+        {carrousel.data?.map(item => (
+          <li className='item' key={item.id}>
+            <picture className={`${!item.url && 'none'} marco`}>
+              <img className='image' src={item.url} alt={item.main_message} />
+            </picture>
+            <Semicolons className={`${item.url && 'none'} semicolons`}></Semicolons>
+            <h4 className='description'>{item.main_message}</h4>
+          </li>
+        ))}
       </ul>
       <div className='controler'>
         <div className='prev'>
