@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "migration": "prisma migrate dev --preview-feature",
+    "seed": "prisma db seed --preview-feature",
+    "generate": "prisma generate",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
@@ -17,9 +21,13 @@
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "prisma": "^4.2.1",
     "sass": "^1.54.3"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }
