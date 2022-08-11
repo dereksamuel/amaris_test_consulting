@@ -29,3 +29,6 @@ npm run migration
 ## APP ROUTING
 1. Puede reconocer la ruta principal como "/"
 2. La última ruta es "/admin" para la gestión de la sección del carrusel
+
+## DOCUMENTACIÓN
+Este es link para acceder a la documentación: https://docs.google.com/document/d/1a1vL4-g1Q0qR3iX6j-uZFJTtxogtp8rIawx2PX23XBo/edit?usp=sharing
