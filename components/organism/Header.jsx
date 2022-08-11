@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 // components
 import Button from '../atoms/Button'
+import LinkNext from 'next/link'
 import Link from '../atoms/Link'
 import SearchIcon from '../icons/SearchIcon'
 
@@ -58,7 +59,11 @@ export default function Header() {
           ))}
         </div>
         <div className="latest_links">
-          <Link className="link">Log In</Link>
+          <LinkNext href='/admin'>
+            <a className="link">
+              Log In
+            </a>
+          </LinkNext>
           <Button className='square primary'>Get Started</Button>
           <Link className="link-reverse"><SearchIcon /></Link>
         </div>
@@ -73,7 +78,11 @@ export default function Header() {
                 ))}
               </div>
               <div className="latest_links">
-                <Link className="link">Log In</Link>
+                <LinkNext href='/admin'>
+                  <a className="link">
+                    Log In
+                  </a>
+                </LinkNext>
                 <Link className="link-reverse"><p>Buscar</p><SearchIcon /></Link>
                 <Button className='square primary'>Get Started</Button>
               </div>
