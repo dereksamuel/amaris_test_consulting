@@ -5,11 +5,15 @@
   right: 225px;
   top: 85px;
   min-width: 300px;
-  height: 300px;
   // overflow-y: auto;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 40px 10px rgba(116, 125, 138, 0.5);
+  animation: 0.5s alternate forwards normalFadeIn;
+
+  .container_cancel {
+    display: none;
+  }
 
   .subtitle {
     text-align: center;
@@ -49,6 +53,14 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #0000006b;
+  background-color: #00000041;
   z-index: 999;
+}
+
+.login-mobile {
+  display: none;
+}
+
+.login-mobile-overlay {
+  display: none;
 }

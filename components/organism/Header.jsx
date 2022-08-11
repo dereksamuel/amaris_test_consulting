@@ -72,7 +72,8 @@ export default function Header() {
 
   return (
     <>
-      {state.showLogin && <Login />}
+      {state.showLogin && <Login className='login-pc' classNameOverlay='login-pc-overlay' />}
+      {(state.showMenuHamburger && state.showLogin) && <Login className='login-mobile' classNameOverlay='login-mobile-overlay' />}
       <header className='menu'>
         <Image
           src='/images/Logo.png'

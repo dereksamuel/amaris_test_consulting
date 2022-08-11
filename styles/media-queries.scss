@@ -38,6 +38,34 @@ $phone-size: 848px;
     justify-content: space-between;
   }
 
+  .login-pc {
+    display: none;
+  }
+
+  .login-pc-overlay {
+    display: none;
+  }
+
+  .login-mobile-overlay {
+    display: block;
+  }
+
+  .login-mobile {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0;
+    min-width: 320px;
+
+    .container_cancel {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
   .hamburgerMenu {
     margin-left: 25px;
     border: none;
