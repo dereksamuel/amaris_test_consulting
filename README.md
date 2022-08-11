@@ -1,4 +1,4 @@
-# AMARIS TEST CONSULTING
+# AMARIS TEST
 
 ## CORRER EL PROYECTO POR PRIMERA VEZ
 1. Debe ejecutar la dependencia de instalación con este comando:
