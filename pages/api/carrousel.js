@@ -3,7 +3,7 @@
 
 import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient({ datasources: { db: { url: 'file:/db/dev.db' } } })
+const prisma = new PrismaClient({ datasources: { db: { url: 'file:../db/dev.db' } } })
 
 export default async function handler(req, res) {
   switch (req.method) {
