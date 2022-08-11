@@ -6,24 +6,22 @@
 npm install
 ```
 
-2. Debido a que el modelo de base de datos no contiene los datos básicos para comenzar,
+2. El siguiente comando ejecuta migraciones de la base de datos y después de esto,
+  lo que resta es decir cuál es el nombre de la migración
+```bash
+npm run migration
+```
+
+3. Debido a que el modelo de base de datos no contiene los datos básicos para comenzar,
 debe ejecutar este comando para obtener algunos datos:
 ```bash
 npm run seed
 ```
 
-3. Puede ejecutar este comando para ver la aplicación en dev
+4. Puede ejecutar este comando para ver la aplicación en dev
 
 ```bash
 npm run dev
-```
-
-## MIGRACIÓN DE LA BASE DE DATOS
-
-* El siguiente comando ejecuta migraciones de la base de datos y después de esto,
-  lo que resta es decir cuál es el nombre de la migración
-```bash
-npm run migration
 ```
 
 ## APP ROUTING
