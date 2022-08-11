@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 // components
 import Button from '../atoms/Button'
-import LinkNext from 'next/link'
 import Link from '../atoms/Link'
 import SearchIcon from '../icons/SearchIcon'
+import Login from './Login'
 
 export default function Header() {
-  const [state, setState] = useState({ showMenuHamburger: false })
+  const [state, setState] = useState({ showMenuHamburger: false, showLogin: false })
   const links = [
     {
       id: '12345465',
@@ -44,8 +44,35 @@ export default function Header() {
     })
   }
 
+  const onGoLogin = (event) => {
+    event.stopPropagation()
+
+    setState({
+      ...state,
+      showLogin: true
+    })
+  }
+
+  useEffect(() => {
+    const onClickWindow = () => {
+      if (state.showLogin) {
+        setState({
+          ...state,
+          showLogin: false
+        })
+      }
+    }
+
+    window.addEventListener('click', onClickWindow)
+
+    return () => {
+      window.removeEventListener('click', onClickWindow)
+    }
+  }, [state])
+
   return (
     <>
+      {state.showLogin && <Login />}
       <header className='menu'>
         <Image
           src='/images/Logo.png'
@@ -59,11 +86,7 @@ export default function Header() {
           ))}
         </div>
         <div className="latest_links">
-          <LinkNext href='/admin'>
-            <a className="link">
-              Log In
-            </a>
-          </LinkNext>
+          <Link onClick={onGoLogin} className="link">Log In</Link>
           <Button className='square primary'>Get Started</Button>
           <Link className="link-reverse"><SearchIcon /></Link>
         </div>
@@ -78,11 +101,7 @@ export default function Header() {
                 ))}
               </div>
               <div className="latest_links">
-                <LinkNext href='/admin'>
-                  <a className="link">
-                    Log In
-                  </a>
-                </LinkNext>
+                <Link className="link" onClick={onGoLogin}>Log In</Link>
                 <Link className="link-reverse"><p>Buscar</p><SearchIcon /></Link>
                 <Button className='square primary'>Get Started</Button>
               </div>
