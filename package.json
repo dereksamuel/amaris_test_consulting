@@ -10,7 +10,8 @@
     "migration": "prisma migrate dev --preview-feature",
     "seed": "prisma db seed --preview-feature",
     "generate": "prisma generate",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "prisma:init": "prisma init"
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",

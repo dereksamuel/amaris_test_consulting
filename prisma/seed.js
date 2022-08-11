@@ -1,9 +1,9 @@
 const { PrismaClient } = require('@prisma/client')
 const { faker } = require('@faker-js/faker')
 
-const data = [1, 2, 3, 4, 5, 6].map(() => ({
+const data = [1, 2, 3].map(element => ({
   main_message: faker.lorem.lines(),
-  url: faker.image.cats()
+  url: element === 1 ? faker.image.cats() : ''
 }))
 
 const prisma = new PrismaClient()
