@@ -51,17 +51,11 @@ export default function CarrouselData({ carrousel }) {
 
   const onDelete = async () => {
     if (state.selects) {
-      const selects = Array(...state.selects)
-      const promises = []
-
-      selects.map(item => {
-        promises.push(fetch('/api/carrousel?id=' + item.id, {
-          method: 'DELETE'
-        }))
-      })
-
       try {
-        await Promise.all(promises)
+        await fetch('/api/carrousel?id=' + [...state.selects][0].id, {
+          method: 'DELETE'
+        })
+
         swal({
           text: 'Deleted successfully!',
           icon: 'success'
@@ -82,7 +76,7 @@ export default function CarrouselData({ carrousel }) {
       main_message: document.getElementById(`${item.id}_main`).value
     }
 
-    if (item.main_message === data.main_message) return
+    if ((item.main_message === data.main_message) && (item.url === data.url)) return
 
     try {
       await fetch('/api/carrousel?id=' + item.id, {
@@ -105,16 +99,20 @@ export default function CarrouselData({ carrousel }) {
 
   const onCheck = (e, item) => {
     if (e.target.checked && !state.selects.has(item)) {
+      document.querySelectorAll('input[type="checkbox"]').forEach($checkbox => {
+        $checkbox.checked = false
+      })
+
+      e.target.checked = true
+
       setState({
         ...state,
-        selects: new Set(state.selects).add(item)
+        selects: new Set().add(item)
       })
     } else {
-      const newSet = new Set(state.selects)
-      newSet.delete(item)
       setState({
         ...state,
-        selects: newSet
+        selects: new Set()
       })
     }
   }

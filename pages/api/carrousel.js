@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       const savedCarrousel = await prisma.carrousel.create({
         data: JSON.parse(req.body)
       })
-      console.log('savedCarrousel', savedCarrousel)
+
       res.status(201).json(savedCarrousel)
       break
     }
