@@ -45,10 +45,11 @@
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
   margin: auto;
   margin-top: 100px;
-  max-width: 685px;
-  border: 2px solid;
   border-radius: 5px;
   overflow-x: auto;
   margin-bottom: 40px;
+  gap: 15px;
+  max-width: 1510px;
+  padding: 0 10px;
   // background-color: $secondary-color;
 }

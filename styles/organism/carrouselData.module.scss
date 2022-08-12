@@ -4,6 +4,19 @@ $max-width: 100%;
 .carrouselData {
   max-width: $max-width;
   background-color: white;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.users_data .read, .carrouselData .read {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.users_data {
+  border: 2px solid;
+  border-radius: 5px;
+  height: fit-content;
 }
 
 .read {
@@ -31,6 +44,18 @@ $max-width: 100%;
   }
 }
 
+.body_grid_users, .header_grid_users {
+  grid-template-columns: 45px repeat(3, minmax(150px, 1fr)) 100px;
+}
+
 .create {
   display: none;
+}
+
+.button:disabled {
+  opacity: 0.4;
+}
+
+.input:disabled {
+  opacity: 0.7;
 }

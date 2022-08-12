@@ -1,12 +1,12 @@
-export default async function getCarrousel(prisma) {
+export default async function getUser(prisma) {
   let error = null
 
   try {
-    const carrouselData = await prisma.carrousel.findMany()
+    const userData = await prisma.user.findMany()
 
     return {
-      carrousel: {
-        data: carrouselData,
+      userData: {
+        data: userData,
         error
       }
     }
@@ -15,7 +15,7 @@ export default async function getCarrousel(prisma) {
     error = err
 
     return {
-      carrousel: {
+      userData: {
         data: null,
         error
       }

@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react'
-import swal from 'sweetalert'
-
-import Input from '../atoms/Input'
-import SubTitle from '../atoms/SubTitle'
 import Button from '../atoms/Button'
+import SubTitle from '../atoms/SubTitle'
+import Input from '../atoms/Input'
 import Modal from './Modal'
+import useProfile from '../../hooks/useProfile'
 
-export default function CarrouselData({ carrousel }) {
+export default function UsersData({ userData }) {
+  const profile = useProfile()
   const [state, setState] = useState({
     showCreateModal: false,
     selects: new Set()
@@ -25,12 +25,13 @@ export default function CarrouselData({ carrousel }) {
 
     const form = new FormData($formCreate.current)
     const data = {
-      url: form.get('url'),
-      main_message: form.get('main_message')
+      email: form.get('email'),
+      password: form.get('password'),
+      role: form.get('role')
     }
 
     try {
-      await fetch('/api/carrousel', {
+      await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -46,27 +47,6 @@ export default function CarrouselData({ carrousel }) {
         text: 'Something went wrong!',
         icon: 'error'
       })
-    }
-  }
-
-  const onDelete = async () => {
-    if (state.selects) {
-      try {
-        await fetch('/api/carrousel?id=' + [...state.selects][0].id, {
-          method: 'DELETE'
-        })
-
-        swal({
-          text: 'Deleted successfully!',
-          icon: 'success'
-        })
-      } catch (error) {
-        console.error(error)
-        swal({
-          text: 'Something went wrong!',
-          icon: 'error'
-        })
-      }
     }
   }
 
@@ -90,16 +70,38 @@ export default function CarrouselData({ carrousel }) {
     }
   }
 
+  const onDelete = async () => {
+    if (state.selects) {
+      try {
+        await fetch('/api/users?id=' + [...state.selects][0].id, {
+          method: 'DELETE'
+        })
+
+        swal({
+          text: 'Deleted successfully!',
+          icon: 'success'
+        })
+      } catch (error) {
+        console.error(error)
+        swal({
+          text: 'Something went wrong!',
+          icon: 'error'
+        })
+      }
+    }
+  }
+
   const onUpdate = async (item) => {
     const data = {
-      url: document.getElementById(`${item.id}_url`).value,
-      main_message: document.getElementById(`${item.id}_main`).value
+      email: document.getElementById(`${item.id}_email`).value,
+      password: document.getElementById(`${item.id}_password`).value,
+      role: document.getElementById(`${item.id}_role`).value
     }
 
-    if ((item.main_message === data.main_message) && (item.url === data.url)) return
+    if ((item.email === data.email) && (item.password === data.password) && (item.role === data.role)) return
 
     try {
-      await fetch('/api/carrousel?id=' + item.id, {
+      await fetch('/api/users?id=' + item.id, {
         method: 'PUT',
         body: JSON.stringify(data)
       })
@@ -118,23 +120,25 @@ export default function CarrouselData({ carrousel }) {
   }
 
   return (
-    <div className="carrouselData">
+    <div className="users_data">
       <div className="paneltitle">
-        <SubTitle className='small black'>Carrousel</SubTitle>
+        <SubTitle className='small black'>Users</SubTitle>
         <Button className='button secondary ovalo sm' onClick={() => onChangeCreateModal(true)}>+</Button>
         <Button disabled={!state.selects.size} className='button danger ovalo sm' onClick={onDelete}>x</Button>
       </div>
       <ul className="read">
-        <li className='header_grid'>
+        <li className='header_grid header_grid_users'>
           <span></span>
-          <p className='url_header'>Url</p>
-          <p className='main_header'>Main Message</p>
+          <p className='email_header'>Email</p>
+          <p className='main_header'>Password</p>
+          <p className='role_header'>Role</p>
         </li>
-        {carrousel.data?.map(item => (
-          <li key={item.id} className='body_grid'>
-            <Input type="checkbox" onChange={(e) => onCheck(e, item)} />
-            <Input id={`${item.id}_url`} type="url" defaultValue={item.url} placeholder="url" />
-            <Input id={`${item.id}_main`} type="text" defaultValue={item.main_message} placeholder="main message" />
+        {userData?.data?.map(item => (
+          <li key={item.id} className='body_grid body_grid_users'>
+            <Input type="checkbox" disabled={item.email === profile?.email} onChange={(e) => onCheck(e, item)} />
+            <Input id={`${item.id}_email`} type="email" defaultValue={item.email} placeholder="email" />
+            <Input id={`${item.id}_password`} type="text" defaultValue={item.password} placeholder="password message" />
+            <Input id={`${item.id}_role`} type="text" defaultValue={item.role} placeholder="role message" />
             <Button type="button" onClick={() => onUpdate(item)} className='button cancel ovalo sm'>Update</Button>
           </li>
         ))}
@@ -145,14 +149,20 @@ export default function CarrouselData({ carrousel }) {
           <form onSubmit={(e) => onCreate(e, $formCreate)} ref={$formCreate}>
             <li>
               <label htmlFor="">
-                <p>Url:</p>
-                <Input name='url' type="text" />
+                <p>Email:</p>
+                <Input name='email' required type="email" />
               </label>
             </li>
             <li>
               <label htmlFor="">
-                <p>Main Message:</p>
-                <Input name='main_message' required type="text" />
+                <p>Password:</p>
+                <Input name='password' required type="password" />
+              </label>
+            </li>
+            <li>
+              <label htmlFor="">
+                <p>Role:</p>
+                <Input name='role' required type="text" placeholder='admin, reader or editor' />
               </label>
             </li>
             <Button type="button" className='button cancel ovalo lg' onClick={() => onChangeCreateModal(false)}>Cancel</Button>

@@ -1,15 +1,37 @@
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { PrismaClient } from '@prisma/client'
 import Link from 'next/link'
 import CarrouselData from '../components/organism/CarrouselData'
+import UsersData from '../components/organism/UsersData'
 import Text from '../components/atoms/Text'
 import getCarrousel from '../utils/getCarrousel'
+import getUser from '../utils/getUser'
 import useProfile from '../hooks/useProfile'
 
 const prisma = new PrismaClient()
 
-export default function Admin({ carrousel }) {
+export default function Admin({ carrousel, userData }) {
   const user = useProfile()
+
+  useEffect(() => {
+    const onUserData = () => {
+      document.querySelectorAll('.users_data button').forEach($button => { $button.disabled = true })
+    }
+
+    if (user?.role === 'reader') {
+      document.querySelectorAll('input').forEach($input => { $input.disabled = true })
+      document.querySelectorAll('.carrouselData button').forEach($button => { $button.disabled = true })
+
+      onUserData()
+    }
+
+    if (user?.role === 'editor') {
+      document.querySelectorAll('.users_data input').forEach($input => { $input.disabled = true })
+      onUserData()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.role])
 
   return (
     <>
@@ -27,8 +49,9 @@ export default function Admin({ carrousel }) {
           <Text><strong>Role:</strong> {user?.role}</Text>
         </div>
       </header>
-      <div className="panel">
+      <div className={`panel ${user?.role === 'admin' && 'users_mode'}`}>
         <CarrouselData carrousel={carrousel}></CarrouselData>
+        <UsersData userData={userData}></UsersData>
       </div>
     </>
   )
@@ -36,8 +59,12 @@ export default function Admin({ carrousel }) {
 
 export async function getServerSideProps() {
   const props = await getCarrousel(prisma)
+  const propsUser = await getUser(prisma)
 
   return {
-    props
+    props: {
+      ...props,
+      ...propsUser
+    }
   }
 }
