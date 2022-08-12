@@ -1,17 +1,43 @@
+import Image from 'next/image'
+import swal from 'sweetalert'
+import { useRef } from 'react'
+import { useRouter } from 'next/router'
 import SubTitle from '../atoms/SubTitle'
 import Input from '../atoms/Input'
 import Button from '../atoms/Button'
-import Image from 'next/image'
 
-export default function Login({ className, classNameOverlay }) {
-  const onSubmit = event => {
+export default function Login({ onClick, className, classNameOverlay }) {
+  const router = useRouter()
+  const $form = useRef(null)
+
+  const onSubmit = async (event) => {
     event.preventDefault()
+
+    const formData = new FormData($form.current)
+    const data = {
+      email: formData.get('email'),
+      password: formData.get('password')
+    }
+
+    const response = await (await fetch('/api/auth/signin', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })).json()
+
+    swal({
+      text: response?.error || response.success,
+      icon: !response.error ? 'success' : 'error'
+    })
+
+    if (response.success) {
+      router.push('/admin')
+    }
   }
 
   return (
     <>
       <div className={`login-bg ${classNameOverlay}`}></div>
-      <form className={`login ${className}`} onClick={event => event.stopPropagation()} onSubmit={onSubmit}>
+      <form ref={$form} className={`login ${className}`} onClick={event => event.stopPropagation()} onSubmit={onSubmit}>
         <div className="triangule"></div>
         <picture className="container_cancel">
           <Image
@@ -19,16 +45,17 @@ export default function Login({ className, classNameOverlay }) {
             alt='Logo'
             width='15px'
             height='15px'
+            onClick={onClick}
           ></Image>
         </picture>
         <SubTitle className='subtitle small black'>Log In</SubTitle>
-        <label htmlFor="e-mail" className='email'>
+        <label htmlFor="e-mail1" className='email'>
           <p>E-mail:</p>
-          <Input type='email' required id='e-mail' placeholder='example@gmail.com'></Input>
+          <Input name='email' type='email' required id='e-mail1' placeholder='example@gmail.com'></Input>
         </label>
-        <label htmlFor="password" className='password'>
+        <label htmlFor="password1" className='password'>
           <p>Password:</p>
-          <Input type='password' required id='password' placeholder='***********'></Input>
+          <Input name='password' type='password' required id='password1' placeholder='***********'></Input>
         </label>
         <Button type='submit' className='button square primary submit'>Submit</Button>
       </form>

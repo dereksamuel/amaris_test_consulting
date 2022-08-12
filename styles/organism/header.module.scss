@@ -52,14 +52,14 @@
   .latest_links {
     margin-top: 80px;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     padding: 0 38px;
     flex-direction: column;
 
     .link-reverse {
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: flex-start;
 
       p {
         margin-right: 12px;

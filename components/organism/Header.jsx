@@ -53,13 +53,17 @@ export default function Header() {
     })
   }
 
+  const hideLogin = () => {
+    setState({
+      ...state,
+      showLogin: false
+    })
+  }
+
   useEffect(() => {
     const onClickWindow = () => {
       if (state.showLogin) {
-        setState({
-          ...state,
-          showLogin: false
-        })
+        hideLogin()
       }
     }
 
@@ -68,12 +72,13 @@ export default function Header() {
     return () => {
       window.removeEventListener('click', onClickWindow)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state])
 
   return (
     <>
       {state.showLogin && <Login className='login-pc' classNameOverlay='login-pc-overlay' />}
-      {(state.showMenuHamburger && state.showLogin) && <Login className='login-mobile' classNameOverlay='login-mobile-overlay' />}
+      {(state.showMenuHamburger && state.showLogin) && <Login onClick={hideLogin} className='login-mobile' classNameOverlay='login-mobile-overlay' />}
       <header className='menu'>
         <Image
           src='/images/Logo.png'

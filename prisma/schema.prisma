@@ -15,3 +15,10 @@ model Carrousel {
   main_message String
   url String
 }
+
+model User {
+  id String @id @default(uuid()) @unique
+  password String
+  email String @unique
+  role String
+}

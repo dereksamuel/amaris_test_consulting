@@ -18,6 +18,15 @@ async function main() {
   })
 
   await Promise.all(promises)
+
+  // for login and auth
+  await prisma.user.create({
+    data: {
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      role: 'admin'
+    }
+  })
 }
 
 main()
