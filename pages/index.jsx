@@ -7,14 +7,17 @@ import Main from '../components/organism/Main'
 import Skills from '../components/organism/Skills'
 import Slider from '../components/organism/Slider'
 import Support from '../components/organism/Support'
+import useProfile from '../hooks/useProfile'
 import getCarrousel from '../utils/getCarrousel'
 
 const prisma = new PrismaClient()
 
 export default function LandPage({ carrousel }) {
+  const user = useProfile()
+
   return (
     <>
-      <Header />
+      <Header user={user} />
       <Main />
       <Skills />
       <AboutUs />

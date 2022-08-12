@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { PrismaClient } from '@prisma/client'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import CarrouselData from '../components/organism/CarrouselData'
 import Text from '../components/atoms/Text'
 import getCarrousel from '../utils/getCarrousel'
@@ -23,8 +22,10 @@ export default function Admin({ carrousel }) {
             height='34.08px'
           />
         </Link>
-        <p>{user?.email}</p>
-        <Text>{user?.role}</Text>
+        <div className="text_container">
+          <Text><strong>Email:</strong> {user?.email}</Text>
+          <Text><strong>Role:</strong> {user?.role}</Text>
+        </div>
       </header>
       <div className="panel">
         <CarrouselData carrousel={carrousel}></CarrouselData>

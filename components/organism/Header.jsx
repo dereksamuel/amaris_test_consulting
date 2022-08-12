@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import NextLink from 'next/link'
 
 // components
 import Button from '../atoms/Button'
 import Link from '../atoms/Link'
 import SearchIcon from '../icons/SearchIcon'
 import Login from './Login'
+import swal from 'sweetalert'
 
-export default function Header() {
+export default function Header({ user }) {
   const [state, setState] = useState({ showMenuHamburger: false, showLogin: false })
   const links = [
     {
@@ -60,6 +62,15 @@ export default function Header() {
     })
   }
 
+  const onSignOut = async () => {
+    const response = await (await fetch('/api/auth/signout')).json()
+
+    swal({
+      text: response.error || response.success,
+      icon: !response.error ? 'success' : 'error'
+    })
+  }
+
   useEffect(() => {
     const onClickWindow = () => {
       if (state.showLogin) {
@@ -92,7 +103,16 @@ export default function Header() {
           ))}
         </div>
         <div className="latest_links">
-          <Link onClick={onGoLogin} className="link">Log In</Link>
+          {!user?.error ? (
+            <>
+              <Link onClick={onSignOut} className="link">Sing Out</Link>
+              <NextLink href="/admin">
+                <a className="link">Panel</a>
+              </NextLink>
+            </>
+          ) : (
+            <Link onClick={onGoLogin} className="link">Log In</Link>
+          ) }
           <Button className='square primary'>Get Started</Button>
           <Link className="link-reverse"><SearchIcon /></Link>
         </div>
@@ -107,7 +127,16 @@ export default function Header() {
                 ))}
               </div>
               <div className="latest_links">
-                <Link className="link" onClick={onGoLogin}>Log In</Link>
+                {!user?.error ? (
+                  <>
+                    <Link onClick={onSignOut} className="link">Sing Out</Link>
+                    <NextLink href="/admin">
+                      <a className="link">Panel</a>
+                    </NextLink>
+                  </>
+                ) : (
+                  <Link onClick={onGoLogin} className="link">Log In</Link>
+                )}
                 <Link className="link-reverse"><p>Buscar</p><SearchIcon /></Link>
                 <Button className='square primary'>Get Started</Button>
               </div>
