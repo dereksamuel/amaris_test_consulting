@@ -6,6 +6,12 @@ const data = [1, 2, 3].map(element => ({
   url: element === 1 ? faker.image.cats() : ''
 }))
 
+const dataUser = [1, 2, 3].map((element, index) => ({
+  email: faker.internet.email(),
+  password: faker.internet.password(),
+  role: index === 0 ? 'admin' : (index === 1 ? 'editor' : 'reader')
+}))
+
 const prisma = new PrismaClient()
 
 async function main() {
@@ -20,13 +26,15 @@ async function main() {
   await Promise.all(promises)
 
   // for login and auth
-  await prisma.user.create({
-    data: {
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-      role: 'admin'
-    }
+  const promisesRoles = []
+
+  dataUser.forEach((item) => {
+    promisesRoles.push(prisma.user.create({
+      data: item
+    }))
   })
+
+  await Promise.all(promisesRoles)
 }
 
 main()

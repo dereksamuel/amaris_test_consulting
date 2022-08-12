@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 
 const errorResponse = (res) => {
   return res.status(401).json({
-    error: 'You are NOT authorize for continue to the main session'
+    error: 'You are NOT authorized to continue to the main session'
   })
 }
 
