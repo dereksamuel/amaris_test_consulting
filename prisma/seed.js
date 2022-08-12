@@ -6,9 +6,21 @@ const data = [1, 2, 3].map(element => ({
   url: element === 1 ? faker.image.cats() : ''
 }))
 
-const dataUser = [1, 2, 3].map((element, index) => ({
-  email: faker.internet.email(),
-  password: faker.internet.password(),
+const dataUser = [
+  {
+    email: '11hoogan@gmail.com',
+    password: 'admin123'
+  },
+  {
+    email: 'JanethChanel@yahoo.com',
+    password: 'editor123'
+  },
+  {
+    email: 'happyAngr@gmail.com',
+    password: 'reader123'
+  }
+].map((element, index) => ({
+  ...element,
   role: index === 0 ? 'admin' : (index === 1 ? 'editor' : 'reader')
 }))
 
