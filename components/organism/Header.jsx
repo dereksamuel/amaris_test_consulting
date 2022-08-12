@@ -69,6 +69,10 @@ export default function Header({ user }) {
       text: response.error || response.success,
       icon: !response.error ? 'success' : 'error'
     })
+
+    if (response.success) {
+      window.location.reload()
+    }
   }
 
   useEffect(() => {
