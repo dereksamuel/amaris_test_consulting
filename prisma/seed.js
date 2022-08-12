@@ -16,7 +16,7 @@ const dataUser = [
     password: 'editor123'
   },
   {
-    email: 'happyAngr@gmail.com',
+    email: 'happyAngry@gmail.com',
     password: 'reader123'
   }
 ].map((element, index) => ({
