@@ -31,13 +31,13 @@ npm run dev
 ## USUARIOS
 Estos son los usuarios para la autenticación creados con el comando npm run seed:
 
-* Email: 11hoogan@gmail.com
-  Password: admin123
-  Role: admin
+* - Email: 11hoogan@gmail.com
+  - Password: admin123
+  - Role: admin
 
-* Email: JanethChanel@yahoo.com
-  Password: editor123
-  Role: editor
+* - Email: JanethChanel@yahoo.com
+  - Password: editor123
+  - Role: editor
 
 * Email: happyAngry@gmail.com
   Password: reader123
