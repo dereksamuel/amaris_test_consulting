@@ -39,9 +39,9 @@ Estos son los usuarios para la autenticación creados con el comando npm run see
   - Password: editor123
   - Role: editor
 
-* Email: happyAngry@gmail.com
-  Password: reader123
-  Role: reader
+* - Email: happyAngry@gmail.com
+  - Password: reader123
+  - Role: reader
 
 ## DOCUMENTACIÓN
 Este es link para acceder a la documentación: https://docs.google.com/document/d/1a1vL4-g1Q0qR3iX6j-uZFJTtxogtp8rIawx2PX23XBo/edit?usp=sharing
