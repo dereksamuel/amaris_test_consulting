@@ -19,6 +19,6 @@ model Carrousel {
 model User {
   id String @id @default(uuid()) @unique
   password String
-  email String @unique
+  email String
   role String
 }

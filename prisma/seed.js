@@ -8,21 +8,21 @@ const data = [1, 2, 3].map(element => ({
 
 const dataUser = [
   {
+    password: 'admin123',
     email: '11hoogan@gmail.com',
-    password: 'admin123'
+    role: 'admin'
   },
   {
+    password: 'editor123',
     email: 'JanethChanel@yahoo.com',
-    password: 'editor123'
+    role: 'editor'
   },
   {
+    password: 'reader123',
     email: 'happyAngry@gmail.com',
-    password: 'reader123'
+    role: 'reader'
   }
-].map((element, index) => ({
-  ...element,
-  role: index === 0 ? 'admin' : (index === 1 ? 'editor' : 'reader')
-}))
+]
 
 const prisma = new PrismaClient()
 
@@ -38,15 +38,15 @@ async function main() {
   await Promise.all(promises)
 
   // for login and auth
-  const promisesRoles = []
+  const promisesUsers = []
 
   dataUser.forEach((item) => {
-    promisesRoles.push(prisma.user.create({
+    promisesUsers.push(prisma.user.create({
       data: item
     }))
   })
 
-  await Promise.all(promisesRoles)
+  await Promise.all(promisesUsers)
 }
 
 main()
