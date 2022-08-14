@@ -16,7 +16,7 @@ export default async function loginHandler(req, res) {
   const body = JSON.parse(req.body)
   const { email, password } = body
 
-  const dbUser = await prisma.user.findUnique({
+  const dbUser = await prisma.user.findFirst({
     where: {
       email
     }
