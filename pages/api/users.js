@@ -16,7 +16,7 @@ export default async function usersHandler(req, res) {
       switch (req.method) {
       case 'POST': {
         const savedUsers = await prisma.user.create({
-          data: JSON.parse(JSON.stringify(req.body))
+          data: JSON.parse(req.body)
         })
 
         res.status(201).json(savedUsers)
@@ -25,7 +25,7 @@ export default async function usersHandler(req, res) {
       case 'PUT': {
         const { id } = req.query
 
-        const userData = JSON.parse(JSON.stringify(req.body))
+        const userData = JSON.parse(req.body)
 
         const response = await prisma.user.update({
           data: userData,
